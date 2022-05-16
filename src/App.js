@@ -1,24 +1,28 @@
-import logo from './logo.svg';
+import { Route, Routes } from 'react-router-dom';
 import './App.css';
+import Container from './components/Container/Container';
+import Appbar from './components/AppBar/AppBar';
+import HomeView from './views/HomeView';
+import AuthorsView from './views/AuthorsView';
+// import AuthorSubView from './views/AuthorSubView';
+import BooksView from './views/BooksView';
+import BookDetailsView from './views/BookDetailsView';
+import NotFoundView from './views/NotFoundView';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Appbar />
+      <Routes>
+        <Route path="/" element={<HomeView />} />
+        <Route path="/authors/*" element={<AuthorsView />} />
+        {/* <Route path=":authorId" element={<AuthorSubView />} />
+        </Route> */}
+        <Route path="/books" element={<BooksView />} />
+        <Route path="/books/:bookId" element={<BookDetailsView />} />
+        <Route path="*" element={<NotFoundView />} />
+      </Routes>
+    </Container>
   );
 }
 
