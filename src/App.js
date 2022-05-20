@@ -8,6 +8,7 @@ import AuthorsView from './views/AuthorsView';
 import BooksView from './views/BooksView';
 import BookDetailsView from './views/BookDetailsView';
 import NotFoundView from './views/NotFoundView';
+import TableView from './views/TableView';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         </Route> */}
         <Route path="/books" element={<BooksView />} />
         <Route path="/books/:bookId" element={<BookDetailsView />} />
+        <Route path="/table" element={<TableView />} />
         <Route path="*" element={<NotFoundView />} />
       </Routes>
     </Container>

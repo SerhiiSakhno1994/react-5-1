@@ -14,6 +14,9 @@ const Navigation = () => (
     <NavLink to="/books" className={setActive}>
       Книги
     </NavLink>
+    <NavLink to="/table" className={setActive}>
+      Таблиця
+    </NavLink>
   </nav>
 );
 

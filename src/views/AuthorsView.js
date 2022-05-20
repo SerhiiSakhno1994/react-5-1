@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { NavLink, Outlet, Route, Routes } from 'react-router-dom';
+import { NavLink, Route, Routes } from 'react-router-dom';
 import * as bookShelfAPI from '../services/bookshelf-api';
 import PageHeading from '../components/PageHeading/PageHeading';
 import AuthorSubView from './AuthorSubView';
@@ -32,7 +32,6 @@ export default function AuthorsView() {
           element={authors && <AuthorSubView authors={authors} />}
         />
       </Routes>
-      {/* <Outlet /> */}
     </>
   );
 }
